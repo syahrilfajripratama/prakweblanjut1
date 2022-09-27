@@ -3,45 +3,39 @@
 namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
-use CodeIgniter\i18n\Time;
+use CodeIgniter\I18n\Time;
 
 class Mahasiswa extends Seeder
 {
     public function run()
     {
-        $data_mahasiswa = [[
-            'npm' => '0001',
-            'nama'    => 'Ultramen',
-            'alamat' => 'Galaksi Bima',
-            'created_at' =>Time::now()
+        $data_mahasiswa = [
+        [ 
+            'npm' => '2057051017',   
+            'nama'    => 'Syahril Fajri Pratama',
+            'alamat' => 'Way Halim',
+            'created_at' => Time::now()
         ],
-        [
-            'npm' => '0002',
-            'nama'    => 'Kamen Rider',
-            'alamat' => 'Nankatsu',
-            'created_at' =>Time::now()
+        [ 
+            'npm' => '2017051007',   
+            'nama'    => 'Muhammad Faiz',
+            'alamat' => 'Gedong Aer',
+            'created_at' => Time::now()
+        ],        [ 
+            'npm' => '2017051060',   
+            'nama'    => 'Ahmad A l Farizie',
+            'alamat' => 'Madukuro',
+            'created_at' => Time::now()
         ],
-        [
-            'npm' => '0003',
-            'nama'    => 'Power Rangers',
-            'alamat' => 'Depok',
-            'created_at' =>Time::now()
-        ],
-        [
-            'npm' => '0004',
-            'nama'    => 'Gatot Kaca',
-            'alamat' => 'Laut Selatan',
-            'created_at' =>Time::now()
-        ],
-        [
-            'npm' => '0005',
-            'nama'    => 'Doraemon',
-            'alamat' => 'Korea',
-            'created_at' =>Time::now()
-        ],
-    ];
+
+
+        ];
+
+        // Simple Queries
+        // $this->db->query('INSERT INTO mahasiswa (npm, nama, alamat, created_at) VALUES(:npm:, :nama:, :alamat:, :created_at:)', $data);
+
+        // Using Query Builder
         foreach($data_mahasiswa as $data){
-            // Using Query Builder
             $this->db->table('mahasiswa')->insert($data);
         }
     }
